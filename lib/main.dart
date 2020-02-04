@@ -80,6 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
       randomTexto = estados[new Random().nextInt(estados.length)];
       randomCor = cores[new Random().nextInt(cores.length)];
 
+//      link para imagens código http://www.macoratti.net/19/07/flut_img1.htm
       if(randomTexto == 'Acre'){
         image = 'https://s2.static.brasilescola.uol.com.br/img/2019/08/bandeira-acre.jpg';
       }
