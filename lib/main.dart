@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -33,10 +35,11 @@ class _MyHomePageState extends State<MyHomePage> {
     'Acre',
     'Alagoas',
     'Amazonas',
+    'Amapá',
     'Bahia',
     'Ceará',
     'Distrito Federal',
-    'Espirito Santo',
+    'Espírito Santo',
     'Goiás',
     'Maranhão',
     'Mato Grosso',
@@ -55,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
     'Santa Catarina',
     'São Paulo',
     'Sergipe',
-    'Tocantis'
+    'Tocantins'
   ];
   List<MaterialColor> cores = [
     Colors.blue,
@@ -69,12 +72,95 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String randomTexto = "";
   MaterialColor randomCor = Colors.blue;
+  String image = "";
 
-
+//  link para innfo https://brasilescola.uol.com.br/brasil/estados-brasil.htm
   void _atualizarTela() {
     setState(() {
       randomTexto = estados[new Random().nextInt(estados.length)];
       randomCor = cores[new Random().nextInt(cores.length)];
+
+      if(randomTexto == 'Acre'){
+        image = 'https://s2.static.brasilescola.uol.com.br/img/2019/08/bandeira-acre.jpg';
+      }
+      if(randomTexto == 'Amapá'){
+        image = 'https://s4.static.brasilescola.uol.com.br/img/2019/08/bandeira-amapa.jpg';
+      }
+      if(randomTexto == 'Amazonas'){
+        image = 'https://s3.static.brasilescola.uol.com.br/img/2019/08/bandeira-amazonas(1).jpg';
+      }
+      if(randomTexto == 'Pará'){
+      image = 'https://s1.static.brasilescola.uol.com.br/img/2019/08/bandeira-para.jpg';
+      }
+      if(randomTexto == 'Rondônia'){
+        image = 'https://s5.static.brasilescola.uol.com.br/img/2019/08/bandeira-rondonia.jpg';
+      }
+      if(randomTexto == 'Roraima'){
+        image = 'https://s3.static.brasilescola.uol.com.br/img/2019/08/bandeira-roraima.jpg';
+      }
+      if(randomTexto == 'Tocantins'){
+        image = 'https://s2.static.brasilescola.uol.com.br/img/2019/08/bandeira-tocantins.jpg';
+      }
+      if(randomTexto == 'Maranhão'){
+        image = 'https://s4.static.brasilescola.uol.com.br/img/2019/08/bandeira-maranhao.jpg';
+      }
+      if(randomTexto == 'Piaui'){
+        image = 'https://s4.static.brasilescola.uol.com.br/img/2019/08/bandeira-piaui.jpg';
+      }
+      if(randomTexto == 'Ceará'){
+        image = 'https://s5.static.brasilescola.uol.com.br/img/2019/08/bandeira-ceara.jpg';
+      }
+      if(randomTexto == 'Rio Grande do Norte'){
+        image = 'https://s2.static.brasilescola.uol.com.br/img/2019/08/bandeira-rio-grande-do-norte.jpg';
+      }
+      if(randomTexto == 'Paraíba'){
+        image = 'https://s1.static.brasilescola.uol.com.br/img/2019/08/bandeira-paraiba.jpg';
+      }
+      if(randomTexto == 'Pernambuco'){
+        image = 'https://s2.static.brasilescola.uol.com.br/img/2019/08/bandeira-pernambuco.jpg';
+      }
+      if(randomTexto == 'Alagoas'){
+        image = 'https://s3.static.brasilescola.uol.com.br/img/2019/08/bandeira-alagoas.jpg';
+      }
+      if(randomTexto == 'Sergipe'){
+        image = 'https://s1.static.brasilescola.uol.com.br/img/2019/08/bandeira-sergipe.jpg';
+      }
+      if(randomTexto == "Bahia"){
+        image = 'https://s3.static.brasilescola.uol.com.br/img/2019/08/bandeira-bahia.jpg';
+      }
+      if(randomTexto == "Goiás"){
+        image = 'https://s3.static.brasilescola.uol.com.br/img/2019/08/bandeira-goias.jpg';
+      }
+      if(randomTexto =="Mato Grosso"){
+        image = 'https://s2.static.brasilescola.uol.com.br/img/2019/08/bandeira-mato-grosso.jpg';
+      }
+      if(randomTexto == "Mato Grosso do Sul"){
+        image = 'https://s3.static.brasilescola.uol.com.br/img/2019/08/bandeira-mato-grosso-do-sul.jpg';
+      }
+      if(randomTexto == "Distrito Federal"){
+        image = 'https://s3.static.brasilescola.uol.com.br/img/2019/08/bandeira-distrito-federal.jpg';
+      }
+      if(randomTexto == "Espírito Santo"){
+        image = 'https://s5.static.brasilescola.uol.com.br/img/2019/08/bandeira-espirito-santo.jpg';
+      }
+      if(randomTexto == "Minas Gerais"){
+        image = 'https://s5.static.brasilescola.uol.com.br/img/2019/08/bandeira-minas-gerais.jpg';
+      }
+      if(randomTexto == "Rio de Janeiro"){
+        image = 'https://s2.static.brasilescola.uol.com.br/img/2019/08/bandeira-rio-de-janeiro.jpg';
+      }
+      if(randomTexto == "São Paulo"){
+        image = 'https://s1.static.brasilescola.uol.com.br/img/2019/08/bandeira-sao-paulo.jpg';
+      }
+      if(randomTexto == "Santa Catarina"){
+        image = 'https://s3.static.brasilescola.uol.com.br/img/2019/08/bandeira-santa-catarina.jpg';
+      }
+      if(randomTexto == "Paraná"){
+        image = 'https://s3.static.brasilescola.uol.com.br/img/2019/08/bandeira-parana.jpg';
+      }
+      if(randomTexto == "Rio Grande do Sul"){
+        image = 'https://s1.static.brasilescola.uol.com.br/img/2019/08/bandeira-rio-grande-do-sul.jpg';
+      }
     });
   }
 
@@ -94,12 +180,13 @@ class _MyHomePageState extends State<MyHomePage> {
             FlatButton(
               onPressed: _atualizarTela,
               color: randomCor,
-              child: Text('Novo Estado'),
+              child: Text('$randomTexto'),
             ),
-            Text(
-              '$randomTexto',
-              style: Theme.of(context).textTheme.display1,
-            ),
+            Image.network(image)
+//            Text(
+//              '$randomTexto',
+//              style: Theme.of(context).textTheme.display1,
+//            ),
           ],
         ),
       ),
